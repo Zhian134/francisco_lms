@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Return — Admin</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-semibold" href="admin-dashboard.html">Library Admin</a>
+    <div class="ms-auto d-flex gap-2">
+      <a class="btn btn-sm btn-outline-secondary" href="admin-dashboard.html">Back</a>
+      <a class="btn btn-sm btn-outline-secondary" href="login.html">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-4">
+  <div class="card p-4">
+    <h5 class="mb-1">Process Return</h5>
+    <p class="small-muted mb-4">Update LoanItem.li_returned_at and condition_in; then update BookCopy.status.</p>
+
+    <!-- Later in PHP: action="../php/loans/return.php" method="POST" -->
+    <form action="#" method="POST" class="row g-3">
+      <div class="col-12 col-md-4">
+        <label class="form-label">Loan Item ID</label>
+        <input class="form-control" name="loan_item_id" type="number" placeholder="e.g., 5006" required>
+      </div>
+      <div class="col-12 col-md-4">
+        <label class="form-label">Returned At</label>
+        <input class="form-control" name="li_returned_at" type="datetime-local" required>
+      </div>
+      <div class="col-12 col-md-4">
+        <label class="form-label">Condition In</label>
+        <select class="form-select" name="condition_in" required>
+          <option value="GOOD">GOOD</option>
+          <option value="DAMAGED">DAMAGED</option>
+        </select>
+      </div>
+
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Confirm Return</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
